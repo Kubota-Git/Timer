@@ -375,6 +375,7 @@ namespace Timer
             this.Name = "FormTop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timer";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormTop_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPageTop.ResumeLayout(false);

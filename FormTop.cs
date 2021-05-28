@@ -247,6 +247,19 @@ namespace Timer
             DateTime now = DateTime.Now;  //現在時刻2(1秒毎に更新)
             materialLabelTimer.Text  = now.ToLongTimeString();
 
+            //画面最前の調整(常にだとドロワーメニューが見えない為)
+            //FormのTopMost:trueに設定の上
+            if(DrawerIsOpen == true)//ドロワーメニュー表示
+            {
+                //最前表示解除
+                this.TopMost = false;
+            }
+            else//ドロワーメニュー非表示
+            {
+                //最前表示
+                this.TopMost = true;
+            }
+
 
             //アラーム設定中
             if (alarmSetFlag == true)
@@ -364,6 +377,7 @@ namespace Timer
             }
 
         }
+
 
 
         private void materialSliderSetTimeH_onValueChanged(object sender, int newValue)
