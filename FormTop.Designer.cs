@@ -86,7 +86,7 @@ namespace Timer
             this.materialLabelSetTime.AutoSize = true;
             this.materialLabelSetTime.Depth = 0;
             this.materialLabelSetTime.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelSetTime.Location = new System.Drawing.Point(6, 92);
+            this.materialLabelSetTime.Location = new System.Drawing.Point(14, 92);
             this.materialLabelSetTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelSetTime.Name = "materialLabelSetTime";
             this.materialLabelSetTime.Size = new System.Drawing.Size(74, 19);
@@ -98,7 +98,7 @@ namespace Timer
             this.materialLabelStatus.AutoSize = true;
             this.materialLabelStatus.Depth = 0;
             this.materialLabelStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelStatus.Location = new System.Drawing.Point(134, 92);
+            this.materialLabelStatus.Location = new System.Drawing.Point(128, 92);
             this.materialLabelStatus.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelStatus.Name = "materialLabelStatus";
             this.materialLabelStatus.Size = new System.Drawing.Size(42, 19);
@@ -117,12 +117,13 @@ namespace Timer
             this.materialLabelTimer.Size = new System.Drawing.Size(225, 72);
             this.materialLabelTimer.TabIndex = 1;
             this.materialLabelTimer.Text = "00:00:00";
+            this.materialLabelTimer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // materialSwitchPageTop
             // 
             this.materialSwitchPageTop.AutoSize = true;
             this.materialSwitchPageTop.Depth = 0;
-            this.materialSwitchPageTop.Location = new System.Drawing.Point(184, 83);
+            this.materialSwitchPageTop.Location = new System.Drawing.Point(178, 83);
             this.materialSwitchPageTop.Margin = new System.Windows.Forms.Padding(0);
             this.materialSwitchPageTop.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialSwitchPageTop.MouseState = MaterialSkin.MouseState.HOVER;
@@ -348,6 +349,7 @@ namespace Timer
             this.materialSliderSetTimeM.Text = "";
             this.materialSliderSetTimeM.Value = 0;
             this.materialSliderSetTimeM.onValueChanged += new MaterialSkin.Controls.MaterialSlider.ValueChanged(this.materialSliderSetTimeM_onValueChanged);
+            this.materialSliderSetTimeM.DoubleClick += new System.EventHandler(this.materialSliderSetTimeM_DoubleClick);
             // 
             // materialSliderSetTimeH
             // 

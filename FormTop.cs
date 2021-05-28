@@ -372,13 +372,25 @@ namespace Timer
 
                 //現在時刻を表示
                 DateTime now = DateTime.Now;
-                materialComboBoxSetTimeH.Text = now.Hour.ToString("00") + "時";
-                materialComboBoxSetTimeM.Text = now.Minute.ToString("00") + "分";
+                string h = now.Hour.ToString() + "時";//("00")ではリスト0～9と合わなくなる
+                string m = now.Minute.ToString() + "分";//("00")ではリスト0～9と合わなくなる
+                materialComboBoxSetTimeM.Text = m;
+                materialComboBoxSetTimeH.Text = h;
             }
 
         }
 
-
+        private void materialSliderSetTimeM_DoubleClick(object sender, EventArgs e)
+        {
+            if (alarmType == true)//タイマーモード時
+            {
+                //ポモドーロ・テクニックの25分集中を簡単設定(+5分は休憩が良い)
+                int pomodoroNum = 25;
+                materialSliderSetTimeM.Value = pomodoroNum;
+                materialComboBoxSetTimeM.Text = pomodoroNum + "分";
+            }
+            //アラームモード時はなし
+        }
 
         private void materialSliderSetTimeH_onValueChanged(object sender, int newValue)
         {
@@ -391,5 +403,7 @@ namespace Timer
             double n = ((double)materialSliderSetTimeM.Value / 100) * 59;
             materialComboBoxSetTimeM.Text = ((int)n).ToString() + "分";
         }
+
+
     }
 }
