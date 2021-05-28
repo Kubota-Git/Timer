@@ -208,7 +208,8 @@ namespace Timer
                 //TOPスイッチをONに変更
                 materialSwitchPageTop.Checked = true;
                 //TOP画面へ切り替え
-                tabPageTop.Show();
+                materialTabControl1.SelectedTab = tabPageTop;//TOPページに移動
+
 
                 //アラーム解除ボタンへ変更
                 materialButtonAramSet.Text = "DEL";//操作取り消し
@@ -403,6 +404,8 @@ namespace Timer
             double n = ((double)materialSliderSetTimeM.Value / 100) * 59;
             materialComboBoxSetTimeM.Text = ((int)n).ToString() + "分";
         }
+
+
 
 
     }
